@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 
-import { MagicEnchantment } from "./MagicEnchantment";
+import { MagicEnchantment } from "../src/MagicEnchantment";
 
-describe("should get the correct enchantment", () => {
+describe("Magic Enchantment", () => {
   it("should get the correct enchantment for ice", () => {
     const enchantment = new MagicEnchantment("ice");
     expect(enchantment.prefix).toBe("Icy");

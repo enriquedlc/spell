@@ -9,6 +9,6 @@
     "strict": true
   },
 
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "test/MagicEnchantment.test.ts"],
   "exclude": ["node_modules"]
 }
