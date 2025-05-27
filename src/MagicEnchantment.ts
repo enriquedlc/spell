@@ -19,11 +19,6 @@ export class MagicEnchantment implements Enchantment {
   }
 
   private getEnchantmentBy(name: EnchantmentName): Enchantment {
-    return (
-      ENCHANTMENTS[0][name] || {
-        attribute: "Unknown enchantment",
-        prefix: "Unknown enchantment",
-      }
-    );
+    return ENCHANTMENTS[0][name];
   }
 }
