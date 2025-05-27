@@ -1,5 +1,3 @@
-import { Enchantment } from "./Enchantment";
-
 export const ENCHANTMENTS = [
   {
     ice: {
@@ -24,7 +22,3 @@ export const ENCHANTMENTS = [
     },
   },
 ] as const;
-
-export const getEnchantment = (type: keyof (typeof ENCHANTMENTS)[0]) => {
-  return new Enchantment(type, type, type);
-};
