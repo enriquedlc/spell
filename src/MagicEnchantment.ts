@@ -5,18 +5,25 @@ interface Enchantment {
   prefix: string;
 }
 
+type EnchantmentName = keyof (typeof ENCHANTMENTS)[0];
+
 export class MagicEnchantment implements Enchantment {
   readonly attribute: string;
   readonly prefix: string;
 
-  constructor(name: string) {
+  constructor(name: EnchantmentName) {
     const enchantment = this.getEnchantmentBy(name);
 
     this.attribute = enchantment.attribute;
     this.prefix = enchantment.prefix;
   }
 
-  private getEnchantmentBy(name: string): Enchantment {
-    return ENCHANTMENTS[0].ice;
+  private getEnchantmentBy(name: EnchantmentName): Enchantment {
+    return (
+      ENCHANTMENTS[0][name] || {
+        attribute: "Unknown enchantment",
+        prefix: "Unknown enchantment",
+      }
+    );
   }
 }
