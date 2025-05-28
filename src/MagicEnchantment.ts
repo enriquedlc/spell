@@ -1,6 +1,6 @@
 import { ENCHANTMENTS } from "./echantments";
 
-interface Enchantment {
+export interface Enchantment {
   attribute: string;
   prefix: string;
 }

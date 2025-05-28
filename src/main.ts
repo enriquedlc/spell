@@ -1,3 +1,5 @@
+import { Weapon } from "./MagicWeapon";
+
 interface MagicBook {}
 
 interface Durance {
@@ -24,8 +26,4 @@ class HDurance implements Durance {
   public describeWeapon() {
     // Implement here...
   }
-}
-
-interface Weapon {
-  stats(): string;
 }
