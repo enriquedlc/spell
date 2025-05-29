@@ -7,10 +7,10 @@ export interface Weapon {
 export class MagicWeapon {
   private enchantment: Enchantment;
   constructor() {
-    throw new Error("Method not implemented.");
+    this.enchantment = new MagicEnchantment("ice");
   }
 
   public hasEnchantment(): boolean {
-    throw new Error("Method not implemented.");
+    return true;
   }
 }
