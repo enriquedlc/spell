@@ -13,4 +13,9 @@ describe("Magic Enchantment", () => {
     expect(enchantment.prefix).toBe("Inferno");
     expect(enchantment.attribute).toBe("+5 fire damage");
   });
+  it("should randomly set the enchantment", () => {
+    const enchantment = new MagicEnchantment("lifesteal");
+    expect(enchantment.prefix).toBe("Vampire");
+    expect(enchantment.attribute).toBe("+5 lifesteal");
+  });
 });
