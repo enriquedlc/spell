@@ -10,7 +10,7 @@ export class EnchantedWeapon implements Weapon {
     this.enchantments = [new MagicEnchantment("ice")];
   }
   stats(): string {
-    throw new Error("Method not implemented.");
+    return "Icy";
   }
 
   public hasEnchantment(): boolean {
