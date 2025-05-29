@@ -11,11 +11,18 @@ export class MagicEnchantment implements Enchantment {
   readonly attribute: string;
   readonly prefix: string;
 
-  constructor(name: EnchantmentName) {
-    const enchantment = this.getEnchantmentBy(name);
+  constructor() {
+    const enchantment = this.getEnchantment();
 
     this.attribute = enchantment.attribute;
     this.prefix = enchantment.prefix;
+  }
+
+  private getEnchantment(): Enchantment {
+    const enchantmentNames = Object.keys(ENCHANTMENTS[0]) as EnchantmentName[];
+    const randomName =
+      enchantmentNames[Math.floor(Math.random() * enchantmentNames.length)];
+    return this.getEnchantmentBy(randomName);
   }
 
   private getEnchantmentBy(name: EnchantmentName): Enchantment {

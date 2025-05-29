@@ -3,19 +3,9 @@ import { describe, expect, it } from "vitest";
 import { MagicEnchantment } from "../src/MagicEnchantment";
 
 describe("Magic Enchantment", () => {
-  it("should get the correct enchantment for ice", () => {
-    const enchantment = new MagicEnchantment("ice");
-    expect(enchantment.prefix).toBe("Icy");
-    expect(enchantment.attribute).toBe("+5 ice damage");
-  });
-  it("should get the correct enchantment for fire", () => {
-    const enchantment = new MagicEnchantment("fire");
-    expect(enchantment.prefix).toBe("Inferno");
-    expect(enchantment.attribute).toBe("+5 fire damage");
-  });
   it("should randomly set the enchantment", () => {
-    const enchantment = new MagicEnchantment("lifesteal");
-    expect(enchantment.prefix).toBe("Vampire");
-    expect(enchantment.attribute).toBe("+5 lifesteal");
+    const enchantment = new MagicEnchantment();
+    expect(enchantment.prefix).toBeDefined();
+    expect(enchantment.attribute).toBeDefined();
   });
 });
