@@ -4,10 +4,13 @@ export interface Weapon {
   stats(): string;
 }
 
-export class MagicWeapon {
-  private enchantment: Enchantment;
+export class EnchantedWeapon implements Weapon {
+  private enchantments: Enchantment[];
   constructor() {
-    this.enchantment = new MagicEnchantment("ice");
+    this.enchantments = [new MagicEnchantment("ice")];
+  }
+  stats(): string {
+    throw new Error("Method not implemented.");
   }
 
   public hasEnchantment(): boolean {
