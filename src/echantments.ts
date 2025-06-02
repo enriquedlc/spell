@@ -1,4 +1,17 @@
-export const ENCHANTMENTS = [
+interface MagicEffect {
+  prefix: string;
+  attribute: string;
+}
+
+export interface MagicBookEntry {
+  ice: MagicEffect;
+  fire: MagicEffect;
+  lifesteal: MagicEffect;
+  agility: MagicEffect;
+  strength: MagicEffect;
+}
+
+export const MAGIC_BOOK: MagicBookEntry[] = [
   {
     ice: {
       prefix: "Icy",

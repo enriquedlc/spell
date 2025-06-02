@@ -6,11 +6,12 @@ export interface Weapon {
 
 export class EnchantedWeapon implements Weapon {
   private enchantments: Enchantment[];
+
   constructor() {
     this.enchantments = [new MagicEnchantment()];
   }
   stats(): string {
-    return "Icy";
+    return "";
   }
 
   public hasEnchantment(): boolean {

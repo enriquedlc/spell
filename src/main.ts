@@ -1,26 +1,27 @@
-import { Weapon } from "./MagicWeapon";
+import { MagicBookEntry } from "./echantments";
+import { Weapon } from "./EnchantedWeapon";
 
 interface MagicBook {}
 
 interface Durance {
   weapon: Weapon;
-  magicBook: MagicBook;
+  magicBook: MagicBookEntry[];
 
   enchant(): void;
   describeWeapon(): void;
 }
 
-class HDurance implements Durance {
+export class HDurance implements Durance {
   weapon: Weapon;
-  magicBook: MagicBook;
+  magicBook: MagicBookEntry[];
 
-  constructor(weapon: Weapon, magicBook: MagicBook) {
+  constructor(weapon: Weapon, magicBook: MagicBookEntry[]) {
     this.weapon = weapon;
     this.magicBook = magicBook;
   }
 
   public enchant() {
-    // Implement here...
+    
   }
 
   public describeWeapon() {

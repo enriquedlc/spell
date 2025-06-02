@@ -1,11 +1,11 @@
-import { ENCHANTMENTS } from "./echantments";
+import { MAGIC_BOOK } from "./echantments";
 
 export interface Enchantment {
   attribute: string;
   prefix: string;
 }
 
-type EnchantmentName = keyof (typeof ENCHANTMENTS)[0];
+type EnchantmentName = keyof (typeof MAGIC_BOOK)[0];
 
 export class MagicEnchantment implements Enchantment {
   readonly attribute: string;
@@ -19,13 +19,13 @@ export class MagicEnchantment implements Enchantment {
   }
 
   private getEnchantment(): Enchantment {
-    const enchantmentNames = Object.keys(ENCHANTMENTS[0]) as EnchantmentName[];
+    const enchantmentNames = Object.keys(MAGIC_BOOK[0]) as EnchantmentName[];
     const randomName =
       enchantmentNames[Math.floor(Math.random() * enchantmentNames.length)];
     return this.getEnchantmentBy(randomName);
   }
 
   private getEnchantmentBy(name: EnchantmentName): Enchantment {
-    return ENCHANTMENTS[0][name];
+    return MAGIC_BOOK[0][name];
   }
 }
