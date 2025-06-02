@@ -1,8 +1,6 @@
 import { MagicBookEntry } from "./echantments";
 import { Weapon } from "./EnchantedWeapon";
 
-interface MagicBook {}
-
 interface Durance {
   weapon: Weapon;
   magicBook: MagicBookEntry[];
@@ -11,7 +9,7 @@ interface Durance {
   describeWeapon(): void;
 }
 
-export class HDurance implements Durance {
+export class SpellDurance implements Durance {
   weapon: Weapon;
   magicBook: MagicBookEntry[];
 
@@ -20,11 +18,11 @@ export class HDurance implements Durance {
     this.magicBook = magicBook;
   }
 
-  public enchant() {
-    
-  }
+  public enchant() {}
 
   public describeWeapon() {
-    // Implement here...
+    console.log("Dagger of the Nooblet");
+    console.log("5 - 10 attack damage");
+    console.log("1.2 attack speed");
   }
 }

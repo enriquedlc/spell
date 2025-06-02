@@ -1,14 +1,16 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
-import { HDurance } from "../src/main";
+import { SpellDurance } from "../src/main";
 import { EnchantedWeapon } from "../src/EnchantedWeapon";
 import { MAGIC_BOOK } from "../src/echantments";
 
 describe("Main Test Suite", () => {
   it("should show the stats of the weapon", () => {
-    const durance = new HDurance(new EnchantedWeapon(), MAGIC_BOOK);
+    const durance = new SpellDurance(new EnchantedWeapon(), MAGIC_BOOK);
+
+    const consoleSpy = vi.spyOn(console, "log");
     durance.describeWeapon();
-    expect(durance.weapon.stats()).toContain("Dagger of the Nooblet");
+    expect(consoleSpy).toHaveBeenCalledWith("Dagger of the Nooblet");
   });
 
   // it("should have a weapon with an enchantment", () => {
