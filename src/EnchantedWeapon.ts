@@ -11,7 +11,9 @@ export class EnchantedWeapon implements Weapon {
     this.enchantments = [new MagicEnchantment()];
   }
   stats(): string {
-    return "";
+    return this.enchantments
+      .map((enchantment) => `${enchantment.prefix}`)
+      .join(", ");
   }
 
   public hasEnchantment(): boolean {

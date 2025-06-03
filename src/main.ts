@@ -1,5 +1,5 @@
 import { MagicBookEntry } from "./echantments";
-import { Weapon } from "./EnchantedWeapon";
+import { EnchantedWeapon, Weapon } from "./EnchantedWeapon";
 
 interface Durance {
   weapon: Weapon;
@@ -18,7 +18,9 @@ export class SpellDurance implements Durance {
     this.magicBook = magicBook;
   }
 
-  public enchant() {}
+  public enchant() {
+    this.weapon = new EnchantedWeapon();
+  }
 
   public describeWeapon() {
     console.log("Dagger of the Nooblet");
